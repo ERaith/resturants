@@ -1,27 +1,37 @@
-table{
+table {
   width: 100%;
 }
 
-#resturants {
-  text-align: center;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  border: 3px solid #ddd;
+.table-container {
+  display: flex;
+  justify-content: center;
 }
 
-#resturants td, #resturants th {
+#resturants {
+  border-collapse: collapse;
+  border: 3px solid #ddd;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#resturants td,
+#resturants th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#resturants tr:nth-child(even){background-color: #f2f2f2;}
+#resturants tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-#resturants tr:hover {background-color: #ddd;}
+#resturants tr:hover {
+  background-color: #ddd;
+}
 
 #resturants th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  text-align: center;
 }

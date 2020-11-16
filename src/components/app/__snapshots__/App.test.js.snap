@@ -36,6 +36,45 @@ exports[`renders learn react link 1`] = `
         className="main"
       >
         <div
+          className="search-container"
+        >
+          <SearchBar
+            handleSearchChange={[Function]}
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <label
+                htmlFor="search"
+              >
+                 SEARCH 
+              </label>
+              <input
+                className="search"
+                id="search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="text"
+                value=""
+              />
+              <button
+                className="submit-search"
+                type="submit"
+                value="Submit"
+              >
+                Submit
+              </button>
+              <button
+                className="clear-search"
+                onClick={[Function]}
+                type="reset"
+              >
+                Clear Search
+              </button>
+            </form>
+          </SearchBar>
+        </div>
+        <div
           className="table-container"
         >
           <Table
