@@ -8,7 +8,7 @@ import { states } from "../../api/data";
 
 const pageSize = 10;
 
-function Dashboard({ data, headerMeta,genreFilterKeys }) {
+function Dashboard({ data, headerMeta, genreFilterKeys }) {
   const [genreFilter, setGenreFilter] = useState("");
   const [genreFilterActive, setGenreFilterActive] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -42,10 +42,12 @@ function Dashboard({ data, headerMeta,genreFilterKeys }) {
   };
 
   useEffect(() => {
+    // Reset data when fetch updates
     setTableData(data);
   }, [data]);
 
   useEffect(() => {
+    // Filter Results
     const results = data.filter((resturant) => {
       const name = isPresent(resturant, "name", searchTerm);
       const city = isPresent(resturant, "city", searchTerm);
@@ -64,7 +66,8 @@ function Dashboard({ data, headerMeta,genreFilterKeys }) {
 
       return search && !statePresent && !genrePresent;
     });
-
+    
+    setCurrentPage(0);
     setTableData(results);
   }, [
     data,
@@ -103,8 +106,9 @@ function Dashboard({ data, headerMeta,genreFilterKeys }) {
         <Table tableData={tableData} headerMeta={headerMeta} />
       </div>
       <Paginator
-        setPage = {setCurrentPage}
+        setPage={setCurrentPage}
         size={Math.ceil(data.length / pageSize)}
+        page={currentPage}
       />
     </div>
   );
