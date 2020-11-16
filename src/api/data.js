@@ -2,27 +2,22 @@ export const headerMeta = [
   {
     key: "name",
     text: "Resturant Name",
-    sort: true,
   },
   {
     key: "city",
     text: "CITY",
-    sort: true,
   },
   {
     key: "state",
     text: "STATE",
-    sort: true,
   },
   {
     key: "telephone",
     text: "TELEPHONE",
-    sort: true,
   },
   {
     key: "genre",
     text: "GENRE",
-    sort: true,
   },
 ];
 
