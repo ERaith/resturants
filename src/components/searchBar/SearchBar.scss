@@ -1,0 +1,42 @@
+.submit-search {
+  @include button-bg(#2ecc71);
+}
+
+.clear-search {
+  @include button-bg(#e74c3c);
+}
+
+.search-container {
+  background: #f9f9f9;
+  border: 1px solid #c1c1c1;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  padding: 1em;
+  padding: 1em;
+
+  input {
+    background: #fff;
+    border: 1px solid #9c9c9c;
+    margin-bottom: 1rem;
+    .search {
+      width: 100%;
+    }
+    .checkbox {
+      height: 2em;
+      width: 2em;
+    }
+  }
+  label {
+    display: block;
+    padding: 0.5em 1.5em 0.5em 0;
+  }
+  .filter-container {
+    margin-left: auto;
+    width: 30%;
+    .filter {
+      min-width: 8em;
+    }
+  }
+}
