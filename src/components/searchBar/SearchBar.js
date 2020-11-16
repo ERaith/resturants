@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 
-export function SearchBar() {
+export function SearchBar({ handleSearchChange }) {
   const [searchValue, setSearchValue] = useState("");
   const submit = (e) => {
     e.preventDefault();
+    handleSearchChange(searchValue);
+  };
+  const clear = () => {
+    setSearchValue("");
+    handleSearchChange("");
   };
   return (
     <form onSubmit={submit}>
@@ -16,6 +21,12 @@ export function SearchBar() {
         type="text"
         value={searchValue}
       />
+      <button type="submit" value="Submit" className="submit-search">
+        Submit
+      </button>
+      <button type="reset" className="clear-search" onClick={clear}>
+        Clear Search
+      </button>
     </form>
   );
 }
