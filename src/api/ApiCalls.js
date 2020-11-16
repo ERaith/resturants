@@ -10,7 +10,6 @@ export async function fetchData() {
     }
   );
   const data = await res.json();
-  console.log(data);
   return alphebetize(data);
 }
 
