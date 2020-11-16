@@ -23,7 +23,7 @@ function Dashboard({ data, headerMeta }) {
     });
 
     setTableData(results);
-  }, [searchTerm]);
+  }, [searchTerm,data]);
 
   return (
     <div className="main">
