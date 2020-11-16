@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { SearchBar } from '../searchBar/SearchBar';
+import { SearchBar } from "../searchBar/SearchBar";
 import { Table } from "../table/Table";
 
 function Dashboard({ data, headerMeta }) {
@@ -9,22 +9,21 @@ function Dashboard({ data, headerMeta }) {
   const handleSearchChange = (value) => {
     setSearchTerm(value);
   };
-
   useEffect(() => {
     setTableData(data);
-  },[data]);
+  }, [data]);
 
   useEffect(() => {
     const results = data.filter((resturant) => {
-      const name = resturant.name
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
-      return name
+      const name = isPresent(resturant,'name',searchTerm)
+      const city = isPresent(resturant,'city',searchTerm)
+      const genre = isPresent(resturant,'genre',searchTerm)
+
+      return name || city || genre;
     });
 
     setTableData(results);
-    
-  }, [searchTerm])
+  }, [searchTerm]);
 
   return (
     <div className="main">
@@ -39,3 +38,7 @@ function Dashboard({ data, headerMeta }) {
 }
 
 export default Dashboard;
+
+export function isPresent(data, key, searchTerm) {
+  return data[key].toLowerCase().includes(searchTerm.toLowerCase());
+}
