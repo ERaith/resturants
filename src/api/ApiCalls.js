@@ -14,7 +14,7 @@ export async function fetchData() {
   return alphebetize(data);
 }
 
-function alphebetize(data) {
+export function alphebetize(data) {
   return data.sort((a, b) => {
     if (a.name < b.name) {
       return -1;
