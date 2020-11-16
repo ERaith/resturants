@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from "react";
 
+import { Paginator } from "../paginator/Paginator";
 import { SearchBar } from "../searchBar/SearchBar";
 import { SelectionFilter } from "../selectionFilter/SelectionFilter";
 import { Table } from "../table/Table";
 import { states } from "../../api/data";
 
-function Dashboard({ data, headerMeta,genreFilterKeys }) {
+const pageSize = 10;
+
+function Dashboard({ data, headerMeta, genreFilterKeys }) {
+  const [genreFilter, setGenreFilter] = useState("");
+  const [genreFilterActive, setGenreFilterActive] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [stateFilter, setStateFilter] = useState("");
   const [stateFilterActive, setStateFilterActive] = useState(true);
   const [tableData, setTableData] = useState([]);
-  const [genreFilterActive, setGenreFilterActive] = useState(true);
-  const [genreFilter, setGenreFilter] = useState("");
+  const [paginatedData, setPaginatedData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const handleSearchChange = (value) => {
     setSearchTerm(value);
@@ -38,10 +43,12 @@ function Dashboard({ data, headerMeta,genreFilterKeys }) {
   };
 
   useEffect(() => {
+    // Reset data when fetch updates
     setTableData(data);
   }, [data]);
 
   useEffect(() => {
+    // Filter Results
     const results = data.filter((resturant) => {
       const name = isPresent(resturant, "name", searchTerm);
       const city = isPresent(resturant, "city", searchTerm);
@@ -61,6 +68,7 @@ function Dashboard({ data, headerMeta,genreFilterKeys }) {
       return search && !statePresent && !genrePresent;
     });
 
+    setCurrentPage(0);
     setTableData(results);
   }, [
     data,
@@ -70,6 +78,13 @@ function Dashboard({ data, headerMeta,genreFilterKeys }) {
     stateFilter,
     stateFilterActive,
   ]);
+
+  useEffect(() => {
+    // paginate
+    const startPointer = currentPage * pageSize;
+    const endPointer = startPointer + pageSize;
+    setPaginatedData(tableData.slice(startPointer, endPointer));
+  }, [currentPage, tableData]);
 
   return (
     <div className="main">
@@ -89,8 +104,17 @@ function Dashboard({ data, headerMeta,genreFilterKeys }) {
         />
       </div>
       <div className="table-container">
-        <Table tableData={tableData} headerMeta={headerMeta} />
+        {tableData === [] ? (
+          <Table tableData={paginatedData} headerMeta={headerMeta} />
+        ) : (
+          "Nothing to See here"
+        )}
       </div>
+      <Paginator
+        setPage={setCurrentPage}
+        size={Math.ceil(tableData.length / pageSize)}
+        page={currentPage}
+      />
     </div>
   );
 }

@@ -457,110 +457,17 @@ exports[`renders learn react link 1`] = `
         <div
           className="table-container"
         >
-          <Table
-            headerMeta={
-              Array [
-                Object {
-                  "key": "name",
-                  "text": "Resturant Name",
-                },
-                Object {
-                  "key": "city",
-                  "text": "CITY",
-                },
-                Object {
-                  "key": "state",
-                  "text": "STATE",
-                },
-                Object {
-                  "key": "telephone",
-                  "text": "TELEPHONE",
-                },
-                Object {
-                  "key": "genre",
-                  "text": "GENRE",
-                },
-              ]
-            }
-            tableData={Array []}
-          >
-            <table
-              className="container"
-              id="resturants"
-            >
-              <tbody>
-                <TableHeader
-                  headers={
-                    Array [
-                      Object {
-                        "key": "name",
-                        "text": "Resturant Name",
-                      },
-                      Object {
-                        "key": "city",
-                        "text": "CITY",
-                      },
-                      Object {
-                        "key": "state",
-                        "text": "STATE",
-                      },
-                      Object {
-                        "key": "telephone",
-                        "text": "TELEPHONE",
-                      },
-                      Object {
-                        "key": "genre",
-                        "text": "GENRE",
-                      },
-                    ]
-                  }
-                >
-                  <tr
-                    className="table-row"
-                  >
-                    <th
-                      key="name"
-                    >
-                      Resturant Name
-                    </th>
-                    <th
-                      key="city"
-                    >
-                      CITY
-                    </th>
-                    <th
-                      key="state"
-                    >
-                      STATE
-                    </th>
-                    <th
-                      key="telephone"
-                    >
-                      TELEPHONE
-                    </th>
-                    <th
-                      key="genre"
-                    >
-                      GENRE
-                    </th>
-                  </tr>
-                </TableHeader>
-                <TableBody
-                  data={Array []}
-                  headerOrder={
-                    Array [
-                      "name",
-                      "city",
-                      "state",
-                      "telephone",
-                      "genre",
-                    ]
-                  }
-                />
-              </tbody>
-            </table>
-          </Table>
+          Nothing to See here
         </div>
+        <Paginator
+          page={0}
+          setPage={[Function]}
+          size={0}
+        >
+          <div
+            className="paginator"
+          />
+        </Paginator>
       </div>
     </Dashboard>
   </div>
