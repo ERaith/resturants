@@ -23,4 +23,3 @@ describe("TableCell", () => {
     });
   });
 });
-Î
