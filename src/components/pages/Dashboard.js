@@ -15,6 +15,7 @@ function Dashboard({ data, headerMeta, genreFilterKeys }) {
   const [stateFilter, setStateFilter] = useState("");
   const [stateFilterActive, setStateFilterActive] = useState(true);
   const [tableData, setTableData] = useState([]);
+  const [paginatedData, setPaginatedData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
 
   const handleSearchChange = (value) => {
@@ -66,7 +67,7 @@ function Dashboard({ data, headerMeta, genreFilterKeys }) {
 
       return search && !statePresent && !genrePresent;
     });
-    
+
     setCurrentPage(0);
     setTableData(results);
   }, [
@@ -82,8 +83,8 @@ function Dashboard({ data, headerMeta, genreFilterKeys }) {
     // paginate
     const startPointer = currentPage * pageSize;
     const endPointer = startPointer + pageSize;
-    setTableData(data.slice(startPointer, endPointer));
-  }, [data, currentPage]);
+    setPaginatedData(tableData.slice(startPointer, endPointer));
+  }, [currentPage, tableData]);
 
   return (
     <div className="main">
@@ -103,11 +104,15 @@ function Dashboard({ data, headerMeta, genreFilterKeys }) {
         />
       </div>
       <div className="table-container">
-        <Table tableData={tableData} headerMeta={headerMeta} />
+        {tableData === [] ? (
+          <Table tableData={paginatedData} headerMeta={headerMeta} />
+        ) : (
+          "Nothing to See here"
+        )}
       </div>
       <Paginator
         setPage={setCurrentPage}
-        size={Math.ceil(data.length / pageSize)}
+        size={Math.ceil(tableData.length / pageSize)}
         page={currentPage}
       />
     </div>
