@@ -1,3 +1,4 @@
+import { TableBody } from './TableBody';
 import { TableHeader } from "./TableHeader";
 
 export function Table({ tableData, headerMeta }) {
@@ -6,15 +7,7 @@ export function Table({ tableData, headerMeta }) {
     <table className="container" id="resturants">
       <tbody>
         <TableHeader headers={headerMeta} />
-        <>
-          {tableData.map((row) => (
-            <tr key={`${row.id}`} className="table-row">
-              {headerOrder.map((header) => {
-                return <td className="table-cell">{row[header]}</td>;
-              })}
-            </tr>
-          ))}
-        </>
+        <TableBody data={tableData} headerOrder={headerOrder} />
       </tbody>
     </table>
   );
