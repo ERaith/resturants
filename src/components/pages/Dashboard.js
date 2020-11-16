@@ -105,7 +105,7 @@ function Dashboard({ data, headerMeta, genreFilterKeys }) {
         />
       </div>
       <div className="table-container">
-        {tableData === [] ? (
+        {tableData.length!==0 ? (
           <Table tableData={paginatedData} headerMeta={headerMeta} />
         ) : (
           "Nothing to See here"
