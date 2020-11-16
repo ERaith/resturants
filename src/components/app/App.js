@@ -11,9 +11,14 @@ function App() {
     fetchData().then((data) => setData(data));
   }, []);
 
+  const genreFilterKeys = data.reduce((acc,curVal)=>{
+    const vals = curVal.genre.split(',')
+    return [...new Set([...acc,...vals])]
+  },[])
+
   return (
     <div className="App">
-      <Dashboard data={data} headerMeta={headerMeta}/>
+      <Dashboard data={data} headerMeta={headerMeta} genreFilterKeys={genreFilterKeys}/>
     </div>
   );
 }

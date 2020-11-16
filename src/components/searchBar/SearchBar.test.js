@@ -6,7 +6,11 @@ import toJson from "enzyme-to-json";
 describe("SearchBar", () => {
   describe("Snapshots", () => {
     it("should match the snapshot", () => {
-      const wrapper = shallow(<SearchBar />);
+      const mockHandleSearchChange = jest.fn();
+      const props = {
+        handleSearchChange: mockHandleSearchChange,
+      };
+      const wrapper = mount(<SearchBar {...props} />);
 
       expect(toJson(wrapper)).toMatchSnapshot();
     });
@@ -14,7 +18,11 @@ describe("SearchBar", () => {
 
   describe("user interactions", () => {
     it("should update searchValue", () => {
-      const wrapper = mount(<SearchBar />);
+      const mockHandleSearchChange = jest.fn();
+      const props = {
+        handleSearchChange: mockHandleSearchChange,
+      };
+      const wrapper = mount(<SearchBar {...props} />);
       const input = wrapper.find('input[type="text"]');
 
       expect(input.props()).toEqual({

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectionFilter Snapshots should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="filter-container"
+  >
+    <label
+      for="Test"
+    >
+       TEST 
+    </label>
+    <select
+      class="filter"
+      id="Test"
+    >
+      <option>
+        All
+      </option>
+      <option>
+        one
+      </option>
+      <option>
+        two
+      </option>
+    </select>
+    <input
+      class="checkbox"
+      id="Test:isActive"
+      type="checkbox"
+    />
+  </div>
+</DocumentFragment>
+`;
