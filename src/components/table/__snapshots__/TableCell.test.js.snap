@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableCell Snapshots should match the snapshot 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <TableCell
+        data="Fake-Data"
+      >
+        <td
+          className="table-cell"
+        >
+          Fake-Data
+        </td>
+      </TableCell>
+    </tr>
+  </tbody>
+</table>
+`;

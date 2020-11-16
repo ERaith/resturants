@@ -206,155 +206,362 @@ exports[`Dashboard Snapshots should match the initial snapshot 1`] = `
           id="resturants"
         >
           <tbody>
-            <tr
-              className="table-row"
+            <TableHeader
+              headers={
+                Array [
+                  Object {
+                    "key": "name",
+                    "text": "Resturant Name",
+                  },
+                  Object {
+                    "key": "city",
+                    "text": "CITY",
+                  },
+                  Object {
+                    "key": "state",
+                    "text": "STATE",
+                  },
+                  Object {
+                    "key": "telephone",
+                    "text": "TELEPHONE",
+                  },
+                  Object {
+                    "key": "genre",
+                    "text": "GENRE",
+                  },
+                ]
+              }
             >
-              <th
-                key="name"
+              <tr
+                className="table-row"
               >
-                Resturant Name
-              </th>
-              <th
-                key="city"
-              >
-                CITY
-              </th>
-              <th
-                key="state"
-              >
-                STATE
-              </th>
-              <th
-                key="telephone"
-              >
-                TELEPHONE
-              </th>
-              <th
-                key="genre"
-              >
-                GENRE
-              </th>
-            </tr>
-            <tr
-              className="table-row"
-              key="f223fdd0-4adc-423e-9747-980a66c256ca"
+                <th
+                  key="name"
+                >
+                  Resturant Name
+                </th>
+                <th
+                  key="city"
+                >
+                  CITY
+                </th>
+                <th
+                  key="state"
+                >
+                  STATE
+                </th>
+                <th
+                  key="telephone"
+                >
+                  TELEPHONE
+                </th>
+                <th
+                  key="genre"
+                >
+                  GENRE
+                </th>
+              </tr>
+            </TableHeader>
+            <TableBody
+              data={
+                Array [
+                  Object {
+                    "address1": "201 Waterfront St",
+                    "attire": "business casual",
+                    "city": "Oxon Hill",
+                    "genre": "Steak,American,Contemporary,Seafood,Cafe",
+                    "hours": "Open Daily 5:30 PM-10:00 PM",
+                    "id": "f223fdd0-4adc-423e-9747-980a66c256ca",
+                    "lat": "38.782098",
+                    "long": "-77.017492",
+                    "name": "Old Hickory Steakhouse",
+                    "state": "MD",
+                    "tags": "Social,Food and Dining,Restaurants,Steakhouses",
+                    "telephone": "(301) 965-4000",
+                    "website": "http://www.gaylordnational.com",
+                    "zip": "20745",
+                  },
+                  Object {
+                    "address1": "303 E Main St",
+                    "attire": "business casual",
+                    "city": "Aspen",
+                    "genre": "Japanese,Sushi,Asian,Contemporary,Seafood",
+                    "hours": "Open Daily 5:30 PM-9:00 PM",
+                    "id": "00b35e1a-82b1-4988-b8b9-6df826db2818",
+                    "lat": "39.190723",
+                    "long": "-106.82031",
+                    "name": "Matsuhisa",
+                    "state": "CO",
+                    "tags": "Social,Food and Dining,Restaurants,Japanese,Social,Food and Dining,Restaurants,Sushi",
+                    "telephone": "(970) 544-6628",
+                    "website": "http://www.matsuhisaaspen.com",
+                    "zip": "81611",
+                  },
+                  Object {
+                    "address1": "108 3rd St NE",
+                    "attire": "business casual",
+                    "city": "Charlottesville",
+                    "genre": "French,European,Cafe,Continental,American",
+                    "hours": "Mon-Thu 5:30 PM-9:00 PM; Fri-Sat 5:30 PM-10:00 PM",
+                    "id": "0f41a3d0-0641-4eef-b7fd-706f083cf0d5",
+                    "lat": "38.030526",
+                    "long": "-78.479785",
+                    "name": "Fleurie Restaurant",
+                    "state": "VA",
+                    "tags": "Social,Food and Dining,Restaurants,French",
+                    "telephone": "(434) 971-7800",
+                    "website": "http://www.fleurierestaurant.com",
+                    "zip": "22902",
+                  },
+                  Object {
+                    "address1": "500 Crescent Ct",
+                    "attire": "business casual",
+                    "city": "Dallas",
+                    "genre": "Steak,American",
+                    "hours": "Mon-Thu 11:00 AM-10:00 PM; Fri 11:00 AM-11:00 PM; Sat 5:00 PM-11:00 PM; Sun 5:00 PM-9:00 PM",
+                    "id": "0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56",
+                    "lat": "32.794749",
+                    "long": "-96.804099",
+                    "name": "The Capital Grille",
+                    "state": "TX",
+                    "tags": "Social,Food and Dining,Restaurants,Steakhouses,Social,Food and Dining,Restaurants,American",
+                    "telephone": "(214) 303-0500",
+                    "website": "http://www.thecapitalgrille.com",
+                    "zip": "75201",
+                  },
+                ]
+              }
+              headerOrder={
+                Array [
+                  "name",
+                  "city",
+                  "state",
+                  "telephone",
+                  "genre",
+                ]
+              }
             >
-              <td
-                className="table-cell"
+              <tr
+                className="table-row"
+                key="f223fdd0-4adc-423e-9747-980a66c256ca"
               >
-                Old Hickory Steakhouse
-              </td>
-              <td
-                className="table-cell"
+                <TableCell
+                  data="Old Hickory Steakhouse"
+                  key="f223fdd0-4adc-423e-9747-980a66c256ca-Old Hickory Steakhouse"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    Old Hickory Steakhouse
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="Oxon Hill"
+                  key="f223fdd0-4adc-423e-9747-980a66c256ca-Oxon Hill"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    Oxon Hill
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="MD"
+                  key="f223fdd0-4adc-423e-9747-980a66c256ca-MD"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    MD
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="(301) 965-4000"
+                  key="f223fdd0-4adc-423e-9747-980a66c256ca-(301) 965-4000"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    (301) 965-4000
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="Steak,American,Contemporary,Seafood,Cafe"
+                  key="f223fdd0-4adc-423e-9747-980a66c256ca-Steak,American,Contemporary,Seafood,Cafe"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    Steak,American,Contemporary,Seafood,Cafe
+                  </td>
+                </TableCell>
+              </tr>
+              <tr
+                className="table-row"
+                key="00b35e1a-82b1-4988-b8b9-6df826db2818"
               >
-                Oxon Hill
-              </td>
-              <td
-                className="table-cell"
+                <TableCell
+                  data="Matsuhisa"
+                  key="00b35e1a-82b1-4988-b8b9-6df826db2818-Matsuhisa"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    Matsuhisa
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="Aspen"
+                  key="00b35e1a-82b1-4988-b8b9-6df826db2818-Aspen"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    Aspen
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="CO"
+                  key="00b35e1a-82b1-4988-b8b9-6df826db2818-CO"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    CO
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="(970) 544-6628"
+                  key="00b35e1a-82b1-4988-b8b9-6df826db2818-(970) 544-6628"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    (970) 544-6628
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="Japanese,Sushi,Asian,Contemporary,Seafood"
+                  key="00b35e1a-82b1-4988-b8b9-6df826db2818-Japanese,Sushi,Asian,Contemporary,Seafood"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    Japanese,Sushi,Asian,Contemporary,Seafood
+                  </td>
+                </TableCell>
+              </tr>
+              <tr
+                className="table-row"
+                key="0f41a3d0-0641-4eef-b7fd-706f083cf0d5"
               >
-                MD
-              </td>
-              <td
-                className="table-cell"
+                <TableCell
+                  data="Fleurie Restaurant"
+                  key="0f41a3d0-0641-4eef-b7fd-706f083cf0d5-Fleurie Restaurant"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    Fleurie Restaurant
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="Charlottesville"
+                  key="0f41a3d0-0641-4eef-b7fd-706f083cf0d5-Charlottesville"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    Charlottesville
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="VA"
+                  key="0f41a3d0-0641-4eef-b7fd-706f083cf0d5-VA"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    VA
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="(434) 971-7800"
+                  key="0f41a3d0-0641-4eef-b7fd-706f083cf0d5-(434) 971-7800"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    (434) 971-7800
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="French,European,Cafe,Continental,American"
+                  key="0f41a3d0-0641-4eef-b7fd-706f083cf0d5-French,European,Cafe,Continental,American"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    French,European,Cafe,Continental,American
+                  </td>
+                </TableCell>
+              </tr>
+              <tr
+                className="table-row"
+                key="0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56"
               >
-                (301) 965-4000
-              </td>
-              <td
-                className="table-cell"
-              >
-                Steak,American,Contemporary,Seafood,Cafe
-              </td>
-            </tr>
-            <tr
-              className="table-row"
-              key="00b35e1a-82b1-4988-b8b9-6df826db2818"
-            >
-              <td
-                className="table-cell"
-              >
-                Matsuhisa
-              </td>
-              <td
-                className="table-cell"
-              >
-                Aspen
-              </td>
-              <td
-                className="table-cell"
-              >
-                CO
-              </td>
-              <td
-                className="table-cell"
-              >
-                (970) 544-6628
-              </td>
-              <td
-                className="table-cell"
-              >
-                Japanese,Sushi,Asian,Contemporary,Seafood
-              </td>
-            </tr>
-            <tr
-              className="table-row"
-              key="0f41a3d0-0641-4eef-b7fd-706f083cf0d5"
-            >
-              <td
-                className="table-cell"
-              >
-                Fleurie Restaurant
-              </td>
-              <td
-                className="table-cell"
-              >
-                Charlottesville
-              </td>
-              <td
-                className="table-cell"
-              >
-                VA
-              </td>
-              <td
-                className="table-cell"
-              >
-                (434) 971-7800
-              </td>
-              <td
-                className="table-cell"
-              >
-                French,European,Cafe,Continental,American
-              </td>
-            </tr>
-            <tr
-              className="table-row"
-              key="0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56"
-            >
-              <td
-                className="table-cell"
-              >
-                The Capital Grille
-              </td>
-              <td
-                className="table-cell"
-              >
-                Dallas
-              </td>
-              <td
-                className="table-cell"
-              >
-                TX
-              </td>
-              <td
-                className="table-cell"
-              >
-                (214) 303-0500
-              </td>
-              <td
-                className="table-cell"
-              >
-                Steak,American
-              </td>
-            </tr>
+                <TableCell
+                  data="The Capital Grille"
+                  key="0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56-The Capital Grille"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    The Capital Grille
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="Dallas"
+                  key="0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56-Dallas"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    Dallas
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="TX"
+                  key="0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56-TX"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    TX
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="(214) 303-0500"
+                  key="0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56-(214) 303-0500"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    (214) 303-0500
+                  </td>
+                </TableCell>
+                <TableCell
+                  data="Steak,American"
+                  key="0b4bfe46-3e60-4de4-82ba-2dd8e5d46b56-Steak,American"
+                >
+                  <td
+                    className="table-cell"
+                  >
+                    Steak,American
+                  </td>
+                </TableCell>
+              </tr>
+            </TableBody>
           </tbody>
         </table>
       </Table>
