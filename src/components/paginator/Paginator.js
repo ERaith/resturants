@@ -1,4 +1,4 @@
-export function Paginator({size }) {
+export function Paginator({size, setPage }) {
   return (
     <div className="paginator">
       {Array(size)
@@ -9,6 +9,7 @@ export function Paginator({size }) {
               className={`paginator-block`}
               id={`page-${i}`}
               key={i}
+              onClick={() => setPage(i)}
             >
               {i}
             </button>

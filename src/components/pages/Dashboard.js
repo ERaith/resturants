@@ -15,6 +15,7 @@ function Dashboard({ data, headerMeta,genreFilterKeys }) {
   const [stateFilter, setStateFilter] = useState("");
   const [stateFilterActive, setStateFilterActive] = useState(true);
   const [tableData, setTableData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const handleSearchChange = (value) => {
     setSearchTerm(value);
@@ -74,6 +75,13 @@ function Dashboard({ data, headerMeta,genreFilterKeys }) {
     stateFilterActive,
   ]);
 
+  useEffect(() => {
+    // paginate
+    const startPointer = currentPage * pageSize;
+    const endPointer = startPointer + pageSize;
+    setTableData(data.slice(startPointer, endPointer));
+  }, [data, currentPage]);
+
   return (
     <div className="main">
       <div className="search-container">
@@ -95,6 +103,7 @@ function Dashboard({ data, headerMeta,genreFilterKeys }) {
         <Table tableData={tableData} headerMeta={headerMeta} />
       </div>
       <Paginator
+        setPage = {setCurrentPage}
         size={Math.ceil(data.length / pageSize)}
       />
     </div>
