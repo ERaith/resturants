@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableCell Snapshots should match the snapshot 1`] = `
+<table>
+  <thead>
+    <TableHeader
+      headers={
+        Array [
+          Object {
+            "key": "name",
+            "text": "Resturant Name",
+          },
+          Object {
+            "key": "city",
+            "text": "CITY",
+          },
+        ]
+      }
+    >
+      <tr
+        className="table-row"
+      >
+        <th
+          key="name"
+        >
+          Resturant Name
+        </th>
+        <th
+          key="city"
+        >
+          CITY
+        </th>
+      </tr>
+    </TableHeader>
+  </thead>
+</table>
+`;
