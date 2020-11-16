@@ -1,3 +1,5 @@
+import {alphebetize} from "../utils/Utils"
+
 export async function fetchData() {
   const res = await fetch(
     "https://code-challenge.spectrumtoolbox.com/api/restaurants",
@@ -13,14 +15,3 @@ export async function fetchData() {
   return alphebetize(data);
 }
 
-export function alphebetize(data) {
-  return data.sort((a, b) => {
-    if (a.name < b.name) {
-      return -1;
-    }
-    if (a.name > b.name) {
-      return 1;
-    }
-    return 0;
-  });
-}

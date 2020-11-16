@@ -1,4 +1,4 @@
-import { alphebetize } from "./ApiCalls";
+import { alphebetize } from "./Utils";
 
 describe("Sorting function", () => {
   it("should sort an array of objects", () => {

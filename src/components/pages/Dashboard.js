@@ -5,6 +5,7 @@ import { SearchBar } from "../searchBar/SearchBar";
 import { SelectionFilter } from "../selectionFilter/SelectionFilter";
 import { Table } from "../table/Table";
 import { states } from "../../api/data";
+import { isPresent } from "../../utils/Utils";
 
 const pageSize = 10;
 
@@ -120,7 +121,3 @@ function Dashboard({ data, headerMeta, genreFilterKeys }) {
 }
 
 export default Dashboard;
-
-export function isPresent(data, key, searchTerm) {
-  return data[key].toLowerCase().includes(searchTerm.toLowerCase());
-}
