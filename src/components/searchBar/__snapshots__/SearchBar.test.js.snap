@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar Snapshots should match the snapshot 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <label
+    htmlFor="search"
+  >
+     SEARCH 
+  </label>
+  <input
+    className="search"
+    id="search"
+    onChange={[Function]}
+    placeholder="Search"
+    type="text"
+    value=""
+  />
+  <button
+    className="submit-search"
+    type="submit"
+    value="Submit"
+  >
+    Submit
+  </button>
+  <button
+    className="clear-search"
+    onClick={[Function]}
+    type="reset"
+  >
+    Clear Search
+  </button>
+</form>
+`;
+
+exports[`SearchBar user interactions should update searchValue 1`] = `
+<SearchBar>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="search"
+    >
+       SEARCH 
+    </label>
+    <input
+      className="search"
+      id="search"
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+      value="TEST"
+    />
+    <button
+      className="submit-search"
+      type="submit"
+      value="Submit"
+    >
+      Submit
+    </button>
+    <button
+      className="clear-search"
+      onClick={[Function]}
+      type="reset"
+    >
+      Clear Search
+    </button>
+  </form>
+</SearchBar>
+`;
