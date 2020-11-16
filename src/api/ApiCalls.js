@@ -14,4 +14,3 @@ export async function fetchData() {
   const data = await res.json();
   return alphebetize(data);
 }
-
