@@ -9,5 +9,19 @@ export async function fetchData() {
       },
     }
   );
-  return res.json();
+  const data = await res.json();
+  console.log(data);
+  return alphebetize(data);
+}
+
+function alphebetize(data) {
+  return data.sort((a, b) => {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  });
 }
