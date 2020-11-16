@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 
+import { Paginator } from "../paginator/Paginator";
 import { SearchBar } from "../searchBar/SearchBar";
 import { SelectionFilter } from "../selectionFilter/SelectionFilter";
 import { Table } from "../table/Table";
 import { states } from "../../api/data";
 
+const pageSize = 10;
+
 function Dashboard({ data, headerMeta,genreFilterKeys }) {
+  const [genreFilter, setGenreFilter] = useState("");
+  const [genreFilterActive, setGenreFilterActive] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [stateFilter, setStateFilter] = useState("");
   const [stateFilterActive, setStateFilterActive] = useState(true);
   const [tableData, setTableData] = useState([]);
-  const [genreFilterActive, setGenreFilterActive] = useState(true);
-  const [genreFilter, setGenreFilter] = useState("");
 
   const handleSearchChange = (value) => {
     setSearchTerm(value);
@@ -91,6 +94,9 @@ function Dashboard({ data, headerMeta,genreFilterKeys }) {
       <div className="table-container">
         <Table tableData={tableData} headerMeta={headerMeta} />
       </div>
+      <Paginator
+        size={Math.ceil(data.length / pageSize)}
+      />
     </div>
   );
 }
