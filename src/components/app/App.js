@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Dashboard from "../pages/Dashboard";
 import { fetchData } from "../../api/ApiCalls";
+import {headerMeta} from '../../api/data'
 import "./App.scss";
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <Dashboard />
+      <Dashboard data={data} headerMeta={headerMeta}/>
     </div>
   );
 }

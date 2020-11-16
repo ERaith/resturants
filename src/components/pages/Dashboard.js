@@ -1,8 +1,11 @@
+import { Table } from "../table/Table";
 
-function Dashboard() {
+function Dashboard({ data, headerMeta }) {
   return (
-    <div className = "main">
-      Hi
+    <div className="main">
+      <div className="table-container">
+        <Table tableData={data} headerMeta={headerMeta}/>
+      </div>
     </div>
   );
 }
