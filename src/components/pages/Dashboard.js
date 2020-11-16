@@ -5,11 +5,13 @@ import { SelectionFilter } from "../selectionFilter/SelectionFilter";
 import { Table } from "../table/Table";
 import { states } from "../../api/data";
 
-function Dashboard({ data, headerMeta }) {
+function Dashboard({ data, headerMeta,genreFilterKeys }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [stateFilter, setStateFilter] = useState("");
   const [stateFilterActive, setStateFilterActive] = useState(true);
   const [tableData, setTableData] = useState([]);
+  const [genreFilterActive, setGenreFilterActive] = useState(true);
+  const [genreFilter, setGenreFilter] = useState("");
 
   const handleSearchChange = (value) => {
     setSearchTerm(value);
@@ -23,7 +25,13 @@ function Dashboard({ data, headerMeta }) {
       case "state selection:isActive":
         setStateFilterActive(event.target.checked);
         break;
+      case "genre selection":
+        setGenreFilter(event.target.value);
+        break;
 
+      case "genre selection:isActive":
+        setGenreFilterActive(event.target.checked);
+        break;
       default:
         break;
     }
@@ -39,15 +47,29 @@ function Dashboard({ data, headerMeta }) {
       const city = isPresent(resturant, "city", searchTerm);
       const genre = isPresent(resturant, "genre", searchTerm);
       const search = name || city || genre;
-      const state =
+
+      const statePresent =
         stateFilterActive &&
         stateFilter !== "All" &&
-        resturant.state.includes(stateFilter);
-      return search && state;
+        !resturant.state.includes(stateFilter);
+
+      const genrePresent =
+        genreFilterActive &&
+        genreFilter !== "All" &&
+        !resturant.genre.includes(genreFilter);
+
+      return search && !statePresent && !genrePresent;
     });
 
     setTableData(results);
-  }, [searchTerm, data, stateFilter, stateFilterActive]);
+  }, [
+    data,
+    genreFilter,
+    genreFilterActive,
+    searchTerm,
+    stateFilter,
+    stateFilterActive,
+  ]);
 
   return (
     <div className="main">
@@ -58,6 +80,12 @@ function Dashboard({ data, headerMeta }) {
           filterTermActive={stateFilterActive}
           handleChange={handleChange}
           id="state selection"
+        />
+        <SelectionFilter
+          dropDownItems={genreFilterKeys}
+          filterTermActive={genreFilterActive}
+          handleChange={handleChange}
+          id="genre selection"
         />
       </div>
       <div className="table-container">
